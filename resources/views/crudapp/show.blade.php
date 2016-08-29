@@ -14,5 +14,4 @@
     {!!Form::close()!!}
     
 
-<br>
 @stop
