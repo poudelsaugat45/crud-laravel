@@ -49,7 +49,7 @@ class crudController extends Controller
         $crud->sn = $request->sn;
 
         $crud->save();
-        return "saugat";
+        return redirect()-> action("crudController@create");
        
     }
 
