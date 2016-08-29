@@ -17,8 +17,10 @@ class crudController extends Controller
      */
     public function index()
     {
-        $cruds= crud:: all();
+        $cruds= crud::all();
+        
         return $cruds;
+        /*return view('crudapp.index')->with('cruds',$cruds);*/
     }
 
     /**
