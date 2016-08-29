@@ -61,7 +61,9 @@ class crudController extends Controller
      */
     public function show($id)
     {
-        //
+        $crud = Crud::find($id);
+
+         return view('crudapp.show')->with('crud',$crud);
     }
 
     /**
@@ -95,6 +97,8 @@ class crudController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Crud::destroy($id);
+        return redirect() ->route('crud.create');
+
     }
 }
