@@ -1,7 +1,7 @@
 @extends ('layouts.layout')
 
 @section('title')
-  
+  All rows
 @stop
 
 @section('body')

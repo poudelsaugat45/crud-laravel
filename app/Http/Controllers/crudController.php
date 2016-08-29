@@ -19,8 +19,8 @@ class crudController extends Controller
     {
         $cruds= crud::all();
         
-        return $cruds;
-        /*return view('crudapp.index')->with('cruds',$cruds);*/
+        /*return $cruds;*/
+        return view('crudapp.index')->with('cruds',$cruds);
     }
 
     /**
@@ -30,7 +30,7 @@ class crudController extends Controller
      */
     public function create()
     {
-        //
+        return view('crudapp.create');
     }
 
     /**
@@ -41,7 +41,16 @@ class crudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+        
+       $crud = new Crud;
+
+        $crud->name = $request->name;
+        $crud->sn = $request->sn;
+
+        $crud->save();
+        return "saugat";
+       
     }
 
     /**
