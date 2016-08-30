@@ -8,9 +8,26 @@
    'method' => 'delete',
    'route' => ['crud.destroy', $crud->id]
    ])!!}
-    <h1>{{$crud->name}}</h1>
-    <h1>{{$crud->sn}}</h1>
+    <table>
+
+  <tr>
+    <th>Name</th>
+    <th>Sn</th>
+    <th>ID</th>
+  </tr>
+
+  <tr>
+
+    <td>{{$crud->name}}</td>
+    <td>{{$crud->sn}}</td>
+    <td>{{$crud->id}}</td>
+
+    
+   </tr>
+   </table>
+
      {!! Form::submit("delete") !!}
+     <a href="/crud/{{$crud->id}}/edit">Edit</a>
     {!!Form::close()!!}
     
 
