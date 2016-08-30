@@ -7,15 +7,22 @@
 @section('body')
   
    {!!Form::open(['route' => 'crud.store'])!!}
-   
+  <table><td>  {!! Form::label("sn", 'Sn') !!}</td>
+   <td> {!! Form::text("sn") !!}</td>
+<br>
 
-    {!! Form::label("sn", 'sn') !!}
-    {!! Form::text("sn") !!}
+<br>
 
-	{!! Form::label("name", 'name') !!}
-    {!! Form::text("name") !!}
-    
-      {!! Form::submit("create") !!}
+<tr><td>
+	{!! Form::label("name", 'Name') !!}</td>
+	<td>
+    {!! Form::text("name") !!}</td>
+    </tr>
+    <br>
+    <br>
+     
+    </table>
+     {!! Form::submit("create") !!}
 
     {!!Form::close()!!}
 @stop

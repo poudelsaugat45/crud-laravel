@@ -14,6 +14,8 @@
     <th>Name</th>
     <th>Sn</th>
     <th>ID</th>
+    <th>Created At</th>
+    <th>Updated At</th>
   </tr>
 
   <tr>
@@ -21,6 +23,8 @@
     <td>{{$crud->name}}</td>
     <td>{{$crud->sn}}</td>
     <td>{{$crud->id}}</td>
+    <td>{{$crud->updated_at}}</td>
+    <td>{{$crud->created_at}}</td>
 
     
    </tr>

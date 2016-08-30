@@ -4,19 +4,23 @@
 @stop
 
 @section('body')
+<table>
    {!!Form::model($crud, [
    'method' => 'patch',
    'route' => ['crud.update', $crud->id]
    ])!!}
-    {!! Form::label("sn", 'sn') !!}
-    {!! Form::text("sn", $crud->sn) !!}
-
-	{!! Form::label("name", 'name') !!}
-    {!! Form::text("name", $crud->name) !!}
+   <tr>
+    <td>
+    {!! Form::label("sn", 'SN') !!} </td>
+    <td>{!! Form::text("sn", $crud->sn) !!}</td>
+</tr>
+<tr>	<td>{!! Form::label("name", 'Name') !!}</td>
+   <td> {!! Form::text("name", $crud->name) !!}</td>
+   </tr>
     
-      {!! Form::submit("Edit") !!}
+      
+    </table>
+{!! Form::submit("Edit") !!}
     {!!Form::close()!!}
-    
-
 <br>
 @stop
