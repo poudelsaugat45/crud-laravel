@@ -17,10 +17,14 @@ class crudController extends Controller
      */
     public function index()
     {
-        $cruds= crud::all();
-        
-        /*return $cruds;*/
-        return view('crudapp.index')->with('cruds',$cruds);
+       $search = \Request::get('name'); 
+ 
+    $cruds = Crud::where('name','like','%'.$search.'%')
+        ->orderBy('name')
+        ->paginate(20);
+ 
+    return view('crudapp.index',compact('cruds'));
+       
     }
 
     /**
@@ -108,4 +112,5 @@ class crudController extends Controller
         return redirect() ->route('crud.create');
 
     }
+   
 }

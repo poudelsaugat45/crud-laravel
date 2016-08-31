@@ -80,10 +80,11 @@
                         <li><a href="/crud">View all</a></li>
 
                         <li>
-                        	<form>
-                        		<input type="text" name="firstname" placeholder="Search" >
-                        		<input type="submit" value="Go">
-                        	</form>
+                        	{!! Form:: open(['route' => 'crud.index', 'method' => 'GET'])!!}
+                        	{!! Form:: text('name')!!}
+                        	{!! Form:: submit()!!}
+
+                        	{!! Form:: close()!!}
                         </li>
                     @endif
                 </ul>
