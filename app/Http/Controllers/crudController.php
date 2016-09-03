@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-
 use App\crud;
+use Illuminate\Http\Request;
 
 class crudController extends Controller
 {
@@ -17,14 +14,14 @@ class crudController extends Controller
      */
     public function index()
     {
-       $search = \Request::get('name'); 
- 
-    $cruds = Crud::where('name','like','%'.$search.'%')
-        ->orderBy('name')
-        ->paginate(20);
- 
-    return view('crudapp.index',compact('cruds'));
-       
+        $search = \Request::get('name');
+
+        $cruds = Crud::where('name', 'like', '%' . $search . '%')
+            ->orderBy('name')
+            ->paginate(20);
+
+        return view('crudapp.index', compact('cruds'));
+
     }
 
     /**
@@ -45,16 +42,15 @@ class crudController extends Controller
      */
     public function store(Request $request)
     {
-       
-        
-       $crud = new Crud;
+
+        $crud = new Crud;
 
         $crud->name = $request->name;
-        $crud->sn = $request->sn;
+        $crud->sn   = $request->sn;
 
         $crud->save();
-        return redirect()-> action("crudController@create");
-       
+        return redirect()->action("crudController@create");
+
     }
 
     /**
@@ -67,7 +63,7 @@ class crudController extends Controller
     {
         $crud = Crud::find($id);
 
-         return view('crudapp.show')->with('crud',$crud);
+        return view('crudapp.show')->with('crud', $crud);
     }
 
     /**
@@ -78,8 +74,8 @@ class crudController extends Controller
      */
     public function edit($id)
     {
-         $crud = Crud::find($id);
-         return view('crudapp.edit')->with('crud',$crud);
+        $crud = Crud::find($id);
+        return view('crudapp.edit')->with('crud', $crud);
     }
 
     /**
@@ -91,13 +87,13 @@ class crudController extends Controller
      */
     public function update(Request $request, $id)
     {
-         $crud = Crud::find($id);
+        $crud = Crud::find($id);
 
         $crud->name = $request->name;
-        $crud->sn = $request->sn;
+        $crud->sn   = $request->sn;
 
         $crud->save();
-        return redirect() ->route('crud.create');
+        return redirect()->route('crud.create');
     }
 
     /**
@@ -109,8 +105,13 @@ class crudController extends Controller
     public function destroy($id)
     {
         Crud::destroy($id);
-        return redirect() ->route('crud.create');
+        return redirect()->route('crud.create');
 
     }
-   
+    public function __construct()
+{
+    $this->middleware('auth');
 }
+
+}
+

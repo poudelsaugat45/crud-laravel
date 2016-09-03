@@ -16,12 +16,16 @@
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-min.css" rel="stylesheet">
 
     <!-- Scripts -->
+    <script type="text/javascript" src= "/js/bootstrap.js"></script>
+    <script type="text/javascript" src= "/js/bootstrap-min.js"></script>
     <script>
         window.Laravel = <?php echo json_encode([
-            'csrfToken' => csrf_token(),
-        ]); ?>
+    'csrfToken' => csrf_token(),
+]); ?>
     </script>
 </head>
 <body>
@@ -80,11 +84,11 @@
                         <li><a href="/crud">View all</a></li>
 
                         <li>
-                        	{!! Form:: open(['route' => 'crud.index', 'method' => 'GET'])!!}
-                        	{!! Form:: text('name')!!}
-                        	{!! Form:: submit()!!}
+                            {!! Form:: open(['route' => 'crud.index', 'method' => 'GET'])!!}
+                            {!! Form:: text('name')!!}
+                            {!! Form:: submit("Go")!!}
 
-                        	{!! Form:: close()!!}
+                            {!! Form:: close()!!}
                         </li>
                     @endif
                 </ul>

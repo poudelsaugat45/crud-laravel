@@ -18,16 +18,17 @@
 @foreach($cruds as $crud)
   <tr>
 
-    <td><a href="/crud/{{$crud->id}}">{{$crud->name}}</a></td>
+    <td>{{$crud->name}}</td>
     <td>{{$crud->sn}}</td>
     <td>{{$crud->id}}</td>
-    <td><li><a href="/crud/{{$crud->id}}/edit"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></a>
-    <td><div class="alert alert-danger" role="alert">
-  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  <span class="sr-only">Error:</span>
-  Enter a valid email address
-</div></td>
-    </li>
+    <td>
+     <li>
+          <a href="/crud/{{$crud->id}}/edit">
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true">
+            
+          </span></a>
+    <a href="/crud/{{$crud->id}}">
+      </li>
     </td>
 
 
